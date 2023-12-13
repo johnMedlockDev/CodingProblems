@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodingProblems.App", "CodingProblems.Console\CodingProblems.App.csproj", "{714D722E-8779-4636-8C5D-C9DC13A3FC06}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodingProblems.Console", "CodingProblems.Console\CodingProblems.Console.csproj", "{714D722E-8779-4636-8C5D-C9DC13A3FC06}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodingProblems.App.Test", "CodingProblems.Console.Test\CodingProblems.App.Test.csproj", "{41D540CD-53BA-4EEB-8F95-4A388CA59B67}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodingProblems.Console.Test", "CodingProblems.Console.Test\CodingProblems.Console.Test.csproj", "{41D540CD-53BA-4EEB-8F95-4A388CA59B67}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

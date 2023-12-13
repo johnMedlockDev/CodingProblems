@@ -1,9 +1,8 @@
-﻿namespace CodingProblems.App;
+﻿namespace CodingProblems.Console;
 
 internal class Program
 {
     private static void Main(String[] args)
     {
-        Console.WriteLine("Hello, World!");
     }
 }
