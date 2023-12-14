@@ -21,4 +21,25 @@ public class Easy
         _ = months.TryGetValue(monthNumber, out var monthName);
         return monthName ?? "";
     }
+
+    public Int32[] FindTheSmallestAndBiggestNumbers(Int32[] arr)
+    {
+        var min = Int32.MaxValue;
+        var max = Int32.MinValue;
+
+        foreach (var num in arr)
+        {
+            if (num < min)
+            {
+                min = num;
+            }
+
+            if (num > max)
+            {
+                max = num;
+            }
+        }
+
+        return [min, max];
+    }
 }
