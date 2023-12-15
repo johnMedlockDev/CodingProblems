@@ -25,10 +25,4 @@
     <ProjectReference Include="..\CodingProblems.Console\CodingProblems.Console.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Reference Include="CodingProblems.Console">
-      <HintPath>..\CodingProblems.Console\bin\Debug\net8.0\CodingProblems.Console.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-
 </Project>
