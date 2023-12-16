@@ -476,4 +476,115 @@ public class EasyTests
 		var actual = _sut.RaucousApplause(given);
 		_ = actual.Should().Be(expected);
 	}
+	//https://edabit.com/challenge/YciBg83ihMfGGsA7F
+	[TestMethod()]
+	public void ShapesWithNSides_Test_1()
+	{
+		var given = 3;
+		var expected = "triangle";
+		var actual = _sut.ShapesWithNSides(given);
+		_ = actual.Should().Be(expected);
+	}
+
+	[TestMethod()]
+	public void ShapesWithNSides_Test_2()
+	{
+		var given = 1;
+		var expected = "circle";
+		var actual = _sut.ShapesWithNSides(given);
+		_ = actual.Should().Be(expected);
+	}
+
+	[TestMethod()]
+	public void ShapesWithNSides_Test_3()
+	{
+		var given = 9;
+		var expected = "nonagon";
+		var actual = _sut.ShapesWithNSides(given);
+		_ = actual.Should().Be(expected);
+	}
+	//https://edabit.com/challenge/xFaPak5hmiR3vpH6M
+	[TestMethod()]
+	public void Burrrrrrrp_Test_1()
+	{
+		var given = 3;
+		var expected = "Burrrp";
+		var actual = _sut.Burrrrrrrp(given);
+		_ = actual.Should().Be(expected);
+	}
+	[TestMethod()]
+	public void Burrrrrrrp_Test_2()
+	{
+		var given = 5;
+		var expected = "Burrrrrp";
+		var actual = _sut.Burrrrrrrp(given);
+		_ = actual.Should().Be(expected);
+	}
+	[TestMethod()]
+	public void Burrrrrrrp_Test_3()
+	{
+		var given = 9;
+		var expected = "Burrrrrrrrrp";
+		var actual = _sut.Burrrrrrrp(given);
+		_ = actual.Should().Be(expected);
+	}
+	//https://edabit.com/challenge/YxoGXwpApf9De7y5w
+	[TestMethod()]
+	public void HowManyDsAreThere_Test_1()
+	{
+		var given = "My friend Dylan got distracted in school.";
+		var expected = 4;
+		var actual = _sut.HowManyDsAreThere(given);
+		_ = actual.Should().Be(expected);
+	}
+	[TestMethod()]
+	public void HowManyDsAreThere_Test_2()
+	{
+		var given = "Debris was scattered all over the yard.";
+		var expected = 3;
+		var actual = _sut.HowManyDsAreThere(given);
+		_ = actual.Should().Be(expected);
+	}
+
+	[TestMethod()]
+	public void HowManyDsAreThere_Test_3()
+	{
+		var given = "The rodents hibernated in their den.";
+		var expected = 3;
+		var actual = _sut.HowManyDsAreThere(given);
+		_ = actual.Should().Be(expected);
+	}
+	//https://edabit.com/challenge/hjFH2T4Gay7m9ka2m
+	[TestMethod()]
+	public void RemoveTheFirstAndLastCharacters_Test_1()
+	{
+		var given = "hello";
+		var expected = "ell";
+		var actual = _sut.RemoveTheFirstAndLastCharacters(given);
+		_ = actual.Should().Be(expected);
+	}
+	[TestMethod()]
+	public void RemoveTheFirstAndLastCharacters_Test_2()
+	{
+		var given = "maybe";
+		var expected = "ayb";
+		var actual = _sut.RemoveTheFirstAndLastCharacters(given);
+		_ = actual.Should().Be(expected);
+	}
+	[TestMethod()]
+	public void RemoveTheFirstAndLastCharacters_Test_3()
+	{
+		var given = "benefit";
+		var expected = "enefi";
+		var actual = _sut.RemoveTheFirstAndLastCharacters(given);
+		_ = actual.Should().Be(expected);
+	}
+	[TestMethod()]
+	public void RemoveTheFirstAndLastCharacters_Test_4()
+	{
+		var given = "a";
+		var expected = "a";
+		var actual = _sut.RemoveTheFirstAndLastCharacters(given);
+		_ = actual.Should().Be(expected);
+	}
 }

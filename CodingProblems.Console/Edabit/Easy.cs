@@ -269,4 +269,47 @@ public class Easy
 
 		return sumOfCs;
 	}
+
+	public String ShapesWithNSides(Int32 numberOfSides)
+	{
+		var shapesDictionary = new Dictionary<Int32, String>
+		{
+			{ 1, "circle" },
+			{ 2, "semi-circle" },
+			{ 3, "triangle" },
+			{ 4, "square" },
+			{ 5, "pentagon" },
+			{ 6, "hexagon" },
+			{ 7, "heptagon" },
+			{ 8, "octagon" },
+			{ 9, "nonagon" },
+			{ 10, "decagon" }
+		};
+
+		return shapesDictionary[numberOfSides];
+	}
+
+	public String Burrrrrrrp(Int32 numberOfRs)
+	{
+		return "Bu" + new String('r', numberOfRs) + "p";
+	}
+
+	public Int32 HowManyDsAreThere(System.String sentence)
+	{
+		var sumOfD = 0;
+		foreach (var letter in sentence)
+		{
+			if (letter is 'd' or 'D')
+			{
+				sumOfD++;
+			}
+		}
+
+		return sumOfD;
+	}
+
+	public String RemoveTheFirstAndLastCharacters(String word)
+	{
+		return word.Length == 1 ? word : word[1..^1];
+	}
 }
