@@ -1207,4 +1207,620 @@ public class EasyTests
 		var actual = _sut.XsAndOsNobodyKnows(given);
 		_ = actual.Should().Be(expected);
 	}
+	//https://edabit.com/challenge/jRQSYLrcWLtxtYnx4
+	[TestMethod()]
+	public void AlphabetSoup_Test_1()
+	{
+		var given = "hello";
+		var expected = "ehllo";
+		var actual = _sut.AlphabetSoup(given);
+		_ = actual.Should().Be(expected);
+	}
+	[TestMethod()]
+	public void AlphabetSoup_Test_2()
+	{
+		var given = "edabit";
+		var expected = "abdeit";
+		var actual = _sut.AlphabetSoup(given);
+		_ = actual.Should().Be(expected);
+	}
+	[TestMethod()]
+	public void AlphabetSoup_Test_3()
+	{
+		var given = "hacker";
+		var expected = "acehkr";
+		var actual = _sut.AlphabetSoup(given);
+		_ = actual.Should().Be(expected);
+	}
+	[TestMethod()]
+	public void AlphabetSoup_Test_4()
+	{
+		var given = "geek";
+		var expected = "eegk";
+		var actual = _sut.AlphabetSoup(given);
+		_ = actual.Should().Be(expected);
+	}
+	[TestMethod()]
+	public void AlphabetSoup_Test_5()
+	{
+		var given = "javascript";
+		var expected = "aacijprstv";
+		var actual = _sut.AlphabetSoup(given);
+		_ = actual.Should().Be(expected);
+	}
+	//https://edabit.com/challenge/qvo2Ae8WdRQfCwaQk
+	[TestMethod()]
+	public void RetrieveTheSubreddit_Test_1()
+	{
+		var given = "https://www.reddit.com/r/funny/";
+		var expected = "funny";
+		var actual = _sut.RetrieveTheSubreddit(given);
+		_ = actual.Should().Be(expected);
+	}
+	[TestMethod()]
+	public void RetrieveTheSubreddit_Test_2()
+	{
+		var given = "https://www.reddit.com/r/relationships/";
+		var expected = "relationships";
+		var actual = _sut.RetrieveTheSubreddit(given);
+		_ = actual.Should().Be(expected);
+	}
+	[TestMethod()]
+	public void RetrieveTheSubreddit_Test_3()
+	{
+		var given = "https://www.reddit.com/r/mildlyinteresting/";
+		var expected = "mildlyinteresting";
+		var actual = _sut.RetrieveTheSubreddit(given);
+		_ = actual.Should().Be(expected);
+	}
+	//https://edabit.com/challenge/kjeS389wuyQ4Y4vZa
+	[TestMethod()]
+	public void AmongUsImposterFormula_Test_1()
+	{
+		var givenA = 1;
+		var givenB = 10;
+		var expected = "10%";
+		var actual = _sut.AmongUsImposterFormula(givenA, givenB);
+		_ = actual.Should().Be(expected);
+	}
+	[TestMethod()]
+	public void AmongUsImposterFormula_Test_2()
+	{
+		var givenA = 2;
+		var givenB = 5;
+		var expected = "40%";
+		var actual = _sut.AmongUsImposterFormula(givenA, givenB);
+		_ = actual.Should().Be(expected);
+	}
+	[TestMethod()]
+	public void AmongUsImposterFormula_Test_3()
+	{
+		var givenA = 1;
+		var givenB = 8;
+		var expected = "13%";
+		var actual = _sut.AmongUsImposterFormula(givenA, givenB);
+		_ = actual.Should().Be(expected);
+	}
+	//https://edabit.com/challenge/gFiX2TwoCKi6NZz5H
+	[TestMethod()]
+	public void LastDigitUltimate_Test_1()
+	{
+		var given = new Int32[] { 25, 21, 125 };
+		var expected = true;
+		var actual = _sut.LastDigitUltimate(given);
+		_ = actual.Should().Be(expected);
+	}
+	[TestMethod()]
+	public void LastDigitUltimate_Test_2()
+	{
+		var given = new Int32[] { 55, 226, 5190 };
+		var expected = true;
+		var actual = _sut.LastDigitUltimate(given);
+		_ = actual.Should().Be(expected);
+	}
+	[TestMethod()]
+	public void LastDigitUltimate_Test_3()
+	{
+		var given = new Int32[] { 12, 215, 2142 };
+		var expected = false;
+		var actual = _sut.LastDigitUltimate(given);
+		_ = actual.Should().Be(expected);
+	}
+	//https://edabit.com/challenge/bhABvXWDsKSBjD5HR
+	[TestMethod()]
+	public void HashesAndPluses_Test_1()
+	{
+		var given = "###+";
+		var expected = new Int32[] { 3, 1 };
+		var actual = _sut.HashesAndPluses(given);
+		_ = actual.Should().BeEquivalentTo(expected, options => options.WithStrictOrdering());
+	}
+	[TestMethod()]
+	public void HashesAndPluses_Test_2()
+	{
+		var given = "##+++#";
+		var expected = new Int32[] { 3, 3 };
+		var actual = _sut.HashesAndPluses(given);
+		_ = actual.Should().BeEquivalentTo(expected, options => options.WithStrictOrdering());
+	}
+	[TestMethod()]
+	public void HashesAndPluses_Test_3()
+	{
+		var given = "#+++#+#++#";
+		var expected = new Int32[] { 4, 6 };
+		var actual = _sut.HashesAndPluses(given);
+		_ = actual.Should().BeEquivalentTo(expected, options => options.WithStrictOrdering());
+	}
+	[TestMethod()]
+	public void HashesAndPluses_Test_4()
+	{
+		var given = "";
+		var expected = new Int32[] { 0, 0 };
+		var actual = _sut.HashesAndPluses(given);
+		_ = actual.Should().BeEquivalentTo(expected, options => options.WithStrictOrdering());
+	}
+	//https://edabit.com/challenge/sTTJNhDFDzCDxeiGZ
+	[TestMethod()]
+	public void IsTheStringAPalindrome_Test_1()
+	{
+		var given = "mom";
+		var expected = true;
+		var actual = _sut.IsTheStringAPalindrome(given);
+		_ = actual.Should().Be(expected);
+	}
+	[TestMethod()]
+	public void IsTheStringAPalindrome_Test_2()
+	{
+		var given = "scary";
+		var expected = false;
+		var actual = _sut.IsTheStringAPalindrome(given);
+		_ = actual.Should().Be(expected);
+	}
+	[TestMethod()]
+	public void IsTheStringAPalindrome_Test_3()
+	{
+		var given = "reviver";
+		var expected = true;
+		var actual = _sut.IsTheStringAPalindrome(given);
+		_ = actual.Should().Be(expected);
+	}
+	[TestMethod()]
+	public void IsTheStringAPalindrome_Test_4()
+	{
+		var given = "stressed";
+		var expected = false;
+		var actual = _sut.IsTheStringAPalindrome(given);
+		_ = actual.Should().Be(expected);
+	}
+	//https://edabit.com/challenge/TofdXBRqnf7JFiZBC
+	[TestMethod()]
+	public void RemoveDuplicatesFromAnArray_Test_1()
+	{
+		var given = new Int32[] { 1, 0, 1, 0 };
+		var expected = new Int32[] { 1, 0 };
+		var actual = _sut.RemoveDuplicatesFromAnArray(given);
+		_ = actual.Should().BeEquivalentTo(expected, options => options.WithStrictOrdering());
+	}
+	[TestMethod()]
+	public void RemoveDuplicatesFromAnArray_Test_2()
+	{
+		var given = new String[] { "The", "big", "cat" };
+		var expected = new String[] { "The", "big", "cat" };
+		var actual = _sut.RemoveDuplicatesFromAnArray(given);
+		_ = actual.Should().BeEquivalentTo(expected, options => options.WithStrictOrdering());
+	}
+	[TestMethod()]
+	public void RemoveDuplicatesFromAnArray_Test_3()
+	{
+		var given = new String[] { "John", "Taylor", "John" };
+		var expected = new String[] { "John", "Taylor" };
+		var actual = _sut.RemoveDuplicatesFromAnArray(given);
+		_ = actual.Should().BeEquivalentTo(expected, options => options.WithStrictOrdering());
+	}
+	//https://edabit.com/challenge/eLm7MqFQhWNfr2u8p
+	[TestMethod()]
+	public void HowManySolutionsDoesThisQuadraticHave_Test_1()
+	{
+		var givenA = 1;
+		var givenB = 0;
+		var givenC = -1;
+		var expected = 2;
+		var actual = _sut.HowManySolutionsDoesThisQuadraticHave(givenA, givenB, givenC);
+		_ = actual.Should().Be(expected);
+	}
+	[TestMethod()]
+	public void HowManySolutionsDoesThisQuadraticHave_Test_2()
+	{
+		var givenA = 1;
+		var givenB = 0;
+		var givenC = 0;
+		var expected = 1;
+		var actual = _sut.HowManySolutionsDoesThisQuadraticHave(givenA, givenB, givenC);
+		_ = actual.Should().Be(expected);
+	}
+	[TestMethod()]
+	public void HowManySolutionsDoesThisQuadraticHave_Test_3()
+	{
+		var givenA = 1;
+		var givenB = 0;
+		var givenC = 1;
+		var expected = 0;
+		var actual = _sut.HowManySolutionsDoesThisQuadraticHave(givenA, givenB, givenC);
+		_ = actual.Should().Be(expected);
+	}
+	//https://edabit.com/challenge/jZKws3Rv2R3JphCWc
+	[TestMethod()]
+	public void VowelReplacer_Test_1()
+	{
+		var givenA = "the aardvark";
+		var givenB = '#';
+		var expected = "th# ##rdv#rk";
+		var actual = _sut.VowelReplacer(givenA, givenB);
+		_ = actual.Should().Be(expected);
+	}
+	[TestMethod()]
+	public void VowelReplacer_Test_2()
+	{
+		var givenA = "minnie mouse";
+		var givenB = '?';
+		var expected = "m?nn?? m??s?";
+		var actual = _sut.VowelReplacer(givenA, givenB);
+		_ = actual.Should().Be(expected);
+	}
+	[TestMethod()]
+	public void VowelReplacer_Test_3()
+	{
+		var givenA = "shakespeare";
+		var givenB = '*';
+		var expected = "sh*k*sp**r*";
+		var actual = _sut.VowelReplacer(givenA, givenB);
+		_ = actual.Should().Be(expected);
+	}
+	//https://edabit.com/challenge/XofGbRFcoGqRv9gda
+	[TestMethod()]
+	public void BetweenWords_Test_1()
+	{
+		var givenA = "apple";
+		var givenB = "banana";
+		var givenC = "azure";
+		var expected = false;
+		var actual = _sut.BetweenWords(givenA, givenB, givenC);
+		_ = actual.Should().Be(expected);
+	}
+	[TestMethod()]
+	public void BetweenWords_Test_2()
+	{
+		var givenA = "monk";
+		var givenB = "monument";
+		var givenC = "monkey";
+		var expected = false;
+		var actual = _sut.BetweenWords(givenA, givenB, givenC);
+		_ = actual.Should().Be(expected);
+	}
+	[TestMethod()]
+	public void BetweenWords_Test_3()
+	{
+		var givenA = "bookend";
+		var givenB = "boolean";
+		var givenC = "boost";
+		var expected = true;
+		var actual = _sut.BetweenWords(givenA, givenB, givenC);
+		_ = actual.Should().Be(expected);
+	}
+	//https://edabit.com/challenge/yu9e29LSdRXSsb5YG
+	[TestMethod()]
+	public void Equalityof3Values_Test_1()
+	{
+		var givenA = 3;
+		var givenB = 4;
+		var givenC = 3;
+		var expected = 2;
+		var actual = _sut.Equalityof3Values(givenA, givenB, givenC);
+		_ = actual.Should().Be(expected);
+	}
+	[TestMethod()]
+	public void Equalityof3Values_Test_2()
+	{
+		var givenA = 1;
+		var givenB = 1;
+		var givenC = 1;
+		var expected = 3;
+		var actual = _sut.Equalityof3Values(givenA, givenB, givenC);
+		_ = actual.Should().Be(expected);
+	}
+	[TestMethod()]
+	public void Equalityof3Values_Test_3()
+	{
+		var givenA = 3;
+		var givenB = 4;
+		var givenC = 1;
+		var expected = 0;
+		var actual = _sut.Equalityof3Values(givenA, givenB, givenC);
+		_ = actual.Should().Be(expected);
+	}
+	//https://edabit.com/challenge/jh6BWPukQ3wRshbRR
+	[TestMethod()]
+	public void SpacesBetweenEachCharacter_Test_1()
+	{
+		var given = "space";
+		var expected = "s p a c e";
+		var actual = _sut.SpacesBetweenEachCharacter(given);
+		_ = actual.Should().Be(expected);
+	}
+	[TestMethod()]
+	public void SpacesBetweenEachCharacter_Test_2()
+	{
+		var given = "far out";
+		var expected = "f a r   o u t";
+		var actual = _sut.SpacesBetweenEachCharacter(given);
+		_ = actual.Should().Be(expected);
+	}
+	[TestMethod()]
+	public void SpacesBetweenEachCharacter_Test_3()
+	{
+		var given = "elongated musk";
+		var expected = "e l o n g a t e d   m u s k";
+		var actual = _sut.SpacesBetweenEachCharacter(given);
+		_ = actual.Should().Be(expected);
+	}
+	//https://edabit.com/challenge/B4LF3aLb96oRyT9DT
+	[TestMethod()]
+	public void FindTheMissingNumber_Test_1()
+	{
+		var given = new Int32[] { 1, 2, 3, 4, 6, 7, 8, 9, 10 };
+		var expected = 5;
+		var actual = _sut.FindTheMissingNumber(given);
+		_ = actual.Should().Be(expected);
+	}
+	[TestMethod()]
+	public void FindTheMissingNumber_Test_2()
+	{
+		var given = new Int32[] { 7, 2, 3, 6, 5, 9, 1, 4, 8 };
+		var expected = 10;
+		var actual = _sut.FindTheMissingNumber(given);
+		_ = actual.Should().Be(expected);
+	}
+	[TestMethod()]
+	public void FindTheMissingNumber_Test_3()
+	{
+		var given = new Int32[] { 10, 5, 1, 2, 4, 6, 8, 3, 9 };
+		var expected = 7;
+		var actual = _sut.FindTheMissingNumber(given);
+		_ = actual.Should().Be(expected);
+	}
+	//https://edabit.com/challenge/6k7ndtuxRPeSwNF93
+	[TestMethod()]
+	public void LargestSwap_Test_1()
+	{
+		var given = 27;
+		var expected = false;
+		var actual = _sut.LargestSwap(given);
+		_ = actual.Should().Be(expected);
+	}
+	[TestMethod()]
+	public void LargestSwap_Test_2()
+	{
+		var given = 43;
+		var expected = true;
+		var actual = _sut.LargestSwap(given);
+		_ = actual.Should().Be(expected);
+	}
+	[TestMethod()]
+	public void LargestSwap_Test_3()
+	{
+		var given = 14;
+		var expected = false;
+		var actual = _sut.LargestSwap(given);
+		_ = actual.Should().Be(expected);
+	}
+	[TestMethod()]
+	public void LargestSwap_Test_4()
+	{
+		var given = 53;
+		var expected = true;
+		var actual = _sut.LargestSwap(given);
+		_ = actual.Should().Be(expected);
+	}
+	[TestMethod()]
+	public void LargestSwap_Test_5()
+	{
+		var given = 99;
+		var expected = true;
+		var actual = _sut.LargestSwap(given);
+		_ = actual.Should().Be(expected);
+	}
+	//https://edabit.com/challenge/HfMTT2WGoWxSrF52r
+	[TestMethod()]
+	public void FindTheIndex_Test_1()
+	{
+		var givenA = new Int32[] { 1, 2, 3, 4 };
+		var givenB = 3;
+		var expected = 2;
+		var actual = _sut.FindTheIndex(givenA, givenB);
+		_ = actual.Should().Be(expected);
+	}
+	[TestMethod()]
+	public void FindTheIndex_Test_2()
+	{
+		var givenA = new Int32[] { 2, 4, 6, 8, 10 };
+		var givenB = 8;
+		var expected = 3;
+		var actual = _sut.FindTheIndex(givenA, givenB);
+		_ = actual.Should().Be(expected);
+	}
+	[TestMethod()]
+	public void FindTheIndex_Test_3()
+	{
+		var givenA = new Int32[] { 1, 3, 5, 7, 9 };
+		var givenB = 11;
+		var expected = -1;
+		var actual = _sut.FindTheIndex(givenA, givenB);
+		_ = actual.Should().Be(expected);
+	}
+	//https://edabit.com/challenge/xvSXDZh2GHE6F28SA
+	[TestMethod()]
+	public void ValidZipCode_Test_1()
+	{
+		var given = "59001";
+		var expected = true;
+		var actual = _sut.ValidZipCode(given);
+		_ = actual.Should().Be(expected);
+	}
+	[TestMethod()]
+	public void ValidZipCode_Test_2()
+	{
+		var given = "853a7";
+		var expected = false;
+		var actual = _sut.ValidZipCode(given);
+		_ = actual.Should().Be(expected);
+	}
+	[TestMethod()]
+	public void ValidZipCode_Test_3()
+	{
+		var given = "732 32";
+		var expected = false;
+		var actual = _sut.ValidZipCode(given);
+		_ = actual.Should().Be(expected);
+	}
+	[TestMethod()]
+	public void ValidZipCode_Test_4()
+	{
+		var given = "393939";
+		var expected = false;
+		var actual = _sut.ValidZipCode(given);
+		_ = actual.Should().Be(expected);
+	}
+	//https://edabit.com/challenge/HXsSRtx83xj7K94dW
+	[TestMethod()]
+	public void RemoveEveryVowelFromAString_Test_1()
+	{
+		var given = "I have never seen a thin person drinking Diet Coke.";
+		var expected = " hv nvr sn  thn prsn drnkng Dt Ck.";
+		var actual = _sut.RemoveEveryVowelFromAString(given);
+		_ = actual.Should().Be(expected);
+	}
+	[TestMethod()]
+	public void RemoveEveryVowelFromAString_Test_2()
+	{
+		var given = "We're gonna build a wall!";
+		var expected = "W'r gnn bld  wll!";
+		var actual = _sut.RemoveEveryVowelFromAString(given);
+		_ = actual.Should().Be(expected);
+	}
+	[TestMethod()]
+	public void RemoveEveryVowelFromAString_Test_3()
+	{
+		var given = "Happy Thanksgiving to all--even the haters and losers!";
+		var expected = "Hppy Thnksgvng t ll--vn th htrs nd lsrs!";
+		var actual = _sut.RemoveEveryVowelFromAString(given);
+		_ = actual.Should().Be(expected);
+	}
+	//https://edabit.com/challenge/9Emx6unF8evWiXnJA
+	[TestMethod()]
+	public void PurgeAndOrganize_Test_1()
+	{
+		var given = new Int32[] { 1, 2, 4, 3 };
+		var expected = new Int32[] { 1, 2, 3, 4 };
+		var actual = _sut.PurgeAndOrganize(given);
+		_ = actual.Should().BeEquivalentTo(expected, options => options.WithStrictOrdering());
+	}
+	[TestMethod()]
+	public void PurgeAndOrganize_Test_2()
+	{
+		var given = new Int32[] { 1, 4, 4, 4, 4, 4, 3, 2, 1, 2 };
+		var expected = new Int32[] { 1, 2, 3, 4 };
+		var actual = _sut.PurgeAndOrganize(given);
+		_ = actual.Should().BeEquivalentTo(expected, options => options.WithStrictOrdering());
+	}
+	[TestMethod()]
+	public void PurgeAndOrganize_Test_3()
+	{
+		var given = new Int32[] { 6, 7, 3, 2, 1 };
+		var expected = new Int32[] { 1, 2, 3, 6, 7 };
+		var actual = _sut.PurgeAndOrganize(given);
+		_ = actual.Should().BeEquivalentTo(expected, options => options.WithStrictOrdering());
+	}
+	//https://edabit.com/challenge/moqcQ563NukBBbKDL
+	[TestMethod()]
+	public void LettersOnly_Test_1()
+	{
+		var given = "R!=:~0o0./c&}9k`60=y";
+		var expected = "Rocky";
+		var actual = _sut.LettersOnly(given);
+		_ = actual.Should().Be(expected);
+	}
+	[TestMethod()]
+	public void LettersOnly_Test_2()
+	{
+		var given = "^,]%4B|@56a![0{2m>b1&4i4";
+		var expected = "Bambi";
+		var actual = _sut.LettersOnly(given);
+		_ = actual.Should().Be(expected);
+	}
+	[TestMethod()]
+	public void LettersOnly_Test_3()
+	{
+		var given = "^U)6$22>8p).";
+		var expected = "Up";
+		var actual = _sut.LettersOnly(given);
+		_ = actual.Should().Be(expected);
+	}
+	//https://edabit.com/challenge/DYNxn8fpWHutWZxEZ
+	[TestMethod()]
+	public void AnIntroductionToTheMapReducePattern_Test_1()
+	{
+		var given = new Int32[] { 3, 4 };
+		var expected = 5;
+		var actual = _sut.AnIntroductionToTheMapReducePattern(given);
+		_ = actual.Should().Be(expected);
+	}
+	[TestMethod()]
+	public void AnIntroductionToTheMapReducePattern_Test_2()
+	{
+		var given = new Int32[] { 0, 0, -10 };
+		var expected = 10;
+		var actual = _sut.AnIntroductionToTheMapReducePattern(given);
+		_ = actual.Should().Be(expected);
+	}
+	[TestMethod()]
+	public void AnIntroductionToTheMapReducePattern_Test_3()
+	{
+		var given = Array.Empty<Int32>();
+		var expected = 0;
+		var actual = _sut.AnIntroductionToTheMapReducePattern(given);
+		_ = actual.Should().Be(expected);
+	}
+	[TestMethod()]
+	public void AnIntroductionToTheMapReducePattern_Test_4()
+	{
+		var given = new Int32[] { 2, 3, 6, 1, 8 };
+		var expected = 10.677078252031311;
+		var actual = _sut.AnIntroductionToTheMapReducePattern(given);
+		_ = actual.Should().Be(expected);
+	}
+	//https://edabit.com/challenge/MMRWB6cYnpsp3uTPT
+	[TestMethod()]
+	public void CumulativeArraySum_Test_1()
+	{
+		var given = new Int32[] { 1, 2, 3 };
+		var expected = new Int32[] { 1, 3, 6 };
+		var actual = _sut.CumulativeArraySum(given);
+		_ = actual.Should().BeEquivalentTo(expected, options => options.WithStrictOrdering());
+	}
+	[TestMethod()]
+	public void CumulativeArraySum_Test_2()
+	{
+		var given = new Int32[] { 1, -2, 3 };
+		var expected = new Int32[] { 1, -1, 2 };
+		var actual = _sut.CumulativeArraySum(given);
+		_ = actual.Should().BeEquivalentTo(expected, options => options.WithStrictOrdering());
+	}
+	[TestMethod()]
+	public void CumulativeArraySum_Test_3()
+	{
+		var given = new Int32[] { 3, 3, -2, 408, 3, 3 };
+		var expected = new Int32[] { 3, 6, 4, 412, 415, 418 };
+		var actual = _sut.CumulativeArraySum(given);
+		_ = actual.Should().BeEquivalentTo(expected, options => options.WithStrictOrdering());
+	}
 }

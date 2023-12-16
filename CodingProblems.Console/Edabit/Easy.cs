@@ -1,5 +1,4 @@
-﻿
-namespace CodingProblems.Console.Edabit;
+﻿namespace CodingProblems.Console.Edabit;
 public class Easy
 {
 	public String ConvertNumberToCorrespondingMonthName(Int32 monthNumber)
@@ -393,5 +392,226 @@ public class Easy
 		}
 
 		return countX == countO;
+	}
+
+	public String AlphabetSoup(String word)
+	{
+		var sb = new StringBuilder(word.Length);
+		var letterList = word.ToList();
+
+		letterList.Sort();
+
+		letterList.ForEach(l =>
+		{
+			_ = sb.Append(l);
+		});
+
+		return sb.ToString();
+	}
+
+	public String RetrieveTheSubreddit(String urlStr)
+	{
+		return urlStr.Split("https://www.reddit.com/r/")[1].Replace('/', ' ').Trim();
+	}
+
+	public String AmongUsImposterFormula(Int32 numOne, Int32 numTwo)
+	{
+		return $"{Math.Round(numOne / (Decimal) numTwo * 1.0M, 2, MidpointRounding.AwayFromZero).ToString().Replace("0.", "")}%";
+	}
+	public Boolean LastDigitUltimate(Int32[] array)
+	{
+		var listOfLastDigits = new List<Int32>();
+		foreach (var num in array)
+		{
+			var lastDigit = (Int32) Char.GetNumericValue(num.ToString().ToCharArray().Last());
+			listOfLastDigits.Add(lastDigit);
+		}
+
+		var digitProduct = 1;
+		var lastDigitArr = listOfLastDigits.ToArray();
+
+		for (var i = 0; i < lastDigitArr.Length - 1; i++)
+		{
+			digitProduct *= lastDigitArr[i];
+		}
+
+		var digitProductLast = (Int32) Char.GetNumericValue(digitProduct.ToString().ToCharArray().Last());
+		var last = lastDigitArr.Last();
+		return digitProductLast == last;
+	}
+	public Int32[] HashesAndPluses(String chars)
+	{
+		Int32 countHash = 0, countPlus = 0;
+
+		foreach (var c in chars)
+		{
+			if (c == '#')
+			{
+				countHash++;
+			}
+
+			if (c == '+')
+			{
+				countPlus++;
+			}
+		}
+
+		return [countHash, countPlus];
+	}
+
+	public Boolean IsTheStringAPalindrome(String word)
+	{
+		var reversedWord = new String(word.Reverse().ToArray());
+		return word == reversedWord;
+	}
+
+	public T[] RemoveDuplicatesFromAnArray<T>(T[] array)
+	{
+		return array.Distinct().ToArray();
+	}
+	public Int32 HowManySolutionsDoesThisQuadraticHave(Int32 a, Int32 b, Int32 c)
+	{
+		var discriminant = (b * b) - (4 * a * c);
+
+		if (discriminant > 0)
+		{
+			return 2; // Two distinct real solutions
+		}
+		else if (discriminant == 0)
+		{
+			return 1; // One real solution
+		}
+		else
+		{
+			return 0; // No real solutions
+		}
+	}
+	public String VowelReplacer(String phrase, Char c)
+	{
+		var sb = new StringBuilder(phrase.Length);
+		foreach (var letter in phrase)
+		{
+			_ = letter is 'a' or 'e' or 'i' or 'o' or 'u' ? sb.Append(c) : sb.Append(letter);
+		}
+
+		return sb.ToString();
+	}
+
+	public Boolean BetweenWords(String first, String middle, String last)
+	{
+		return String.Compare(first, middle) < 0 && String.Compare(middle, last) < 0;
+	}
+	public Int32 Equalityof3Values(Int32 a, Int32 b, Int32 c)
+	{
+		return a == b && b == c ? 3 : a == b || a == c || b == c ? 2 : 0;
+	}
+
+	public String SpacesBetweenEachCharacter(String phrase)
+	{
+		var sb = new StringBuilder(phrase.Length);
+
+		foreach (var letter in phrase)
+		{
+			_ = sb.Append(letter);
+			_ = sb.Append(' ');
+		}
+
+		return sb.ToString().Trim();
+	}
+	public Int32 FindTheMissingNumber(Int32[] array)
+	{
+		var arr1to10 = Enumerable.Range(1, 10).ToArray();
+
+		for (var i = 0; i < arr1to10.Length; i++)
+		{
+			if (array.Contains(arr1to10[i]))
+			{
+				continue;
+			}
+
+			return arr1to10[i];
+		}
+
+		return -1;
+	}
+	public Boolean LargestSwap(Int32 num)
+	{
+		var chars = num.ToString().ToCharArray();
+		var firstDigit = (Int32) Char.GetNumericValue(chars.First());
+		var secondDigit = (Int32) Char.GetNumericValue(chars.Last());
+
+		return firstDigit == secondDigit || firstDigit > secondDigit;
+	}
+
+	public Int32 FindTheIndex(Int32[] array, Int32 value)
+	{
+		for (var i = 0; i < array.Length; i++)
+		{
+			if (array[i] == value)
+			{
+				return i;
+			}
+		}
+
+		return -1;
+	}
+
+	public Boolean ValidZipCode(String zipcode)
+	{
+		return !zipcode.Contains(' ') && zipcode.Length == 5 && Int32.TryParse(zipcode, out _);
+	}
+
+	public String RemoveEveryVowelFromAString(String phrase)
+	{
+		var sb = new StringBuilder(phrase.Length);
+
+		foreach (var letter in phrase)
+		{
+			if (letter is 'a' or 'e' or 'i' or 'o' or 'u' or 'A' or 'E' or 'I' or 'O' or 'U')
+			{
+				_ = sb.Append("");
+				continue;
+			}
+
+			_ = sb.Append(letter);
+		}
+
+		return sb.ToString();
+	}
+
+	public Int32[] PurgeAndOrganize(Int32[] array)
+	{
+		return (from num in array orderby num select num).Distinct().ToArray();
+	}
+	public String LettersOnly(String chars)
+	{
+		var sb = new StringBuilder();
+		foreach (var c in chars)
+		{
+			if (Char.IsLetter(c))
+			{
+				_ = sb.Append(c);
+			}
+		}
+
+		return sb.ToString();
+	}
+
+	public Double AnIntroductionToTheMapReducePattern(Int32[] array)
+	{
+		return Math.Sqrt(array.Sum(x => x * x));
+	}
+
+	public Int32[] CumulativeArraySum(Int32[] array)
+	{
+		var sumList = new List<Int32>();
+		var sum = 0;
+		foreach (var num in array)
+		{
+			sum += num;
+			sumList.Add(sum);
+		}
+
+		return [.. sumList];
 	}
 }
