@@ -143,7 +143,7 @@ public class Medium
 
 	public Boolean ATMPINCodeValidation(String pin)
 	{
-		if (pin.Length != 4)
+		if (pin.Length is not 4 or 6)
 		{
 			return false;
 		}
