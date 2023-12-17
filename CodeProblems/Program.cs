@@ -1,4 +1,4 @@
-﻿namespace CodingProblems;
+﻿namespace CodeProblems;
 
 internal class Program
 {

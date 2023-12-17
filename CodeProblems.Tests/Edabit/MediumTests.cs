@@ -1,6 +1,6 @@
-﻿using CodingProblems.Edabit;
+﻿using CodeProblems.Edabit;
 
-namespace CodingProblems.Tests.Edabit;
+namespace CodeProblems.Tests.Edabit;
 
 [TestClass()]
 public class MediumTests

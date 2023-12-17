@@ -1,4 +1,4 @@
-﻿namespace CodingProblems.Edabit;
+﻿namespace CodeProblems.Edabit;
 public class Easy
 {
 	public String ConvertNumberToCorrespondingMonthName(Int32 monthNumber)
