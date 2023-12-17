@@ -115,4 +115,47 @@ public class Medium
 	{
 		return (Int32) Convert.ToString(num, 2).ToCharArray().ToList().Select(Char.GetNumericValue).Sum();
 	}
+
+	public Int32[] PositiveCountNegativeSum(Int32[] array)
+	{
+		if (array.Length == 0)
+		{
+			return [];
+		}
+
+		var positiveCount = 0;
+		var negativeSum = 0;
+
+		foreach (var num in array)
+		{
+			if (num > 0)
+			{
+				positiveCount++;
+			}
+			else
+			{
+				negativeSum += num;
+			}
+		}
+
+		return [positiveCount, negativeSum];
+	}
+
+	public Boolean ATMPINCodeValidation(String pin)
+	{
+		if (pin.Length != 4)
+		{
+			return false;
+		}
+
+		foreach (var c in pin)
+		{
+			if (!Char.IsNumber(c))
+			{
+				return false;
+			}
+		}
+
+		return true;
+	}
 }

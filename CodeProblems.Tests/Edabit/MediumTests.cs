@@ -279,4 +279,71 @@ public class MediumTests
 		var actual = _sut.CountOnesInBinaryRepresentationOfInteger(given);
 		_ = actual.Should().Be(expected);
 	}
+	//https://edabit.com/challenge/SXeEZPxDM9Y5HzLvw
+	[TestMethod()]
+	public void PositiveCountNegativeSum_Test_1()
+	{
+		var given = new Int32[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15 };
+		var expected = new Int32[] { 10, -65 };
+		var actual = _sut.PositiveCountNegativeSum(given);
+		_ = actual.Should().BeEquivalentTo(expected, options => options.WithStrictOrdering());
+	}
+
+	[TestMethod()]
+	public void PositiveCountNegativeSum_Test_2()
+	{
+		var given = new Int32[] { 92, 6, 73, -77, 81, -90, 99, 8, -85, 34 };
+		var expected = new Int32[] { 7, -252 };
+		var actual = _sut.PositiveCountNegativeSum(given);
+		_ = actual.Should().BeEquivalentTo(expected, options => options.WithStrictOrdering());
+	}
+	[TestMethod()]
+	public void PositiveCountNegativeSum_Test_3()
+	{
+		var given = new Int32[] { 91, -4, 80, -73, -28 };
+		var expected = new Int32[] { 2, -105 };
+		var actual = _sut.PositiveCountNegativeSum(given);
+		_ = actual.Should().BeEquivalentTo(expected, options => options.WithStrictOrdering());
+	}
+	[TestMethod()]
+	public void PositiveCountNegativeSum_Test_4()
+	{
+		var given = Array.Empty<Int32>();
+		var expected = Array.Empty<Int32>();
+		var actual = _sut.PositiveCountNegativeSum(given);
+		_ = actual.Should().BeEquivalentTo(expected, options => options.WithStrictOrdering());
+	}
+	//https://edabit.com/challenge/gBYEFXeD9G2JMZ9dD
+	[TestMethod()]
+	public void ATMPINCodeValidation_Test_1()
+	{
+		var given = "1234";
+		var expected = true;
+		var actual = _sut.ATMPINCodeValidation(given);
+		_ = actual.Should().Be(expected);
+	}
+	[TestMethod()]
+	public void ATMPINCodeValidation_Test_2()
+	{
+		var given = "12345";
+		var expected = false;
+		var actual = _sut.ATMPINCodeValidation(given);
+		_ = actual.Should().Be(expected);
+	}
+	[TestMethod()]
+	public void ATMPINCodeValidation_Test_3()
+	{
+		var given = "a234";
+		var expected = false;
+		var actual = _sut.ATMPINCodeValidation(given);
+		_ = actual.Should().Be(expected);
+	}
+	[TestMethod()]
+	public void ATMPINCodeValidation_Test_4()
+	{
+		var given = "";
+		var expected = false;
+		var actual = _sut.ATMPINCodeValidation(given);
+		_ = actual.Should().Be(expected);
+	}
 }
