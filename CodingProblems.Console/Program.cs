@@ -1,4 +1,4 @@
-﻿namespace CodingProblems.Console;
+﻿namespace CodingProblems;
 
 internal class Program
 {

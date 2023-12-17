@@ -1,6 +1,6 @@
-﻿using CodingProblems.Console.Edabit;
+﻿using CodingProblems.Edabit;
 
-namespace CodingProblems.Console.Tests.Edabit;
+namespace CodingProblems.Tests.Edabit;
 
 [TestClass()]
 public class MediumTests
@@ -235,6 +235,48 @@ public class MediumTests
 		var given = "149990";
 		var expected = "{ LETTERS =  0, DIGITS =  6 }";
 		var actual = _sut.CountTheLettersAndDigits(given);
+		_ = actual.Should().Be(expected);
+	}
+	//https://edabit.com/challenge/zaokQWNdEudmFWpk7
+	[TestMethod()]
+	public void FindTheCharactersCounterpartCharCode_Test_1()
+	{
+		var given = "A";
+		var expected = 65;
+		var actual = _sut.FindTheCharactersCounterpartCharCode(given);
+		_ = actual.Should().Be(expected);
+	}
+	[TestMethod()]
+	public void FindTheCharactersCounterpartCharCode_Test_2()
+	{
+		var given = "a";
+		var expected = 97;
+		var actual = _sut.FindTheCharactersCounterpartCharCode(given);
+		_ = actual.Should().Be(expected);
+	}
+
+	[TestMethod()]
+	public void CountOnesInBinaryRepresentationOfInteger_Test_1()
+	{
+		var given = 0;
+		var expected = 0;
+		var actual = _sut.CountOnesInBinaryRepresentationOfInteger(given);
+		_ = actual.Should().Be(expected);
+	}
+	[TestMethod()]
+	public void CountOnesInBinaryRepresentationOfInteger_Test_2()
+	{
+		var given = 100;
+		var expected = 3;
+		var actual = _sut.CountOnesInBinaryRepresentationOfInteger(given);
+		_ = actual.Should().Be(expected);
+	}
+	[TestMethod()]
+	public void CountOnesInBinaryRepresentationOfInteger_Test_3()
+	{
+		var given = 999;
+		var expected = 8;
+		var actual = _sut.CountOnesInBinaryRepresentationOfInteger(given);
 		_ = actual.Should().Be(expected);
 	}
 }

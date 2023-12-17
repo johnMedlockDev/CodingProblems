@@ -1,6 +1,6 @@
-﻿using CodingProblems.Console.Edabit;
+﻿using CodingProblems.Edabit;
 
-namespace CodingProblems.Console.Tests.Edabit;
+namespace CodingProblems.Tests.Edabit;
 
 [TestClass]
 public class EasyTests

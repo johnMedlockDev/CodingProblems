@@ -1,4 +1,4 @@
-﻿namespace CodingProblems.Console.Edabit;
+﻿namespace CodingProblems.Edabit;
 public class Easy
 {
 	public String ConvertNumberToCorrespondingMonthName(Int32 monthNumber)
@@ -118,7 +118,7 @@ public class Easy
 		return "Bu" + new String('r', numberOfRs) + "p";
 	}
 
-	public Int32 HowManyDsAreThere(System.String sentence)
+	public Int32 HowManyDsAreThere(String sentence)
 	{
 		var sumOfD = 0;
 		foreach (var letter in sentence)

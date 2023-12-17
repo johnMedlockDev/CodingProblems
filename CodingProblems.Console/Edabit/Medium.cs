@@ -1,4 +1,4 @@
-﻿namespace CodingProblems.Console.Edabit;
+﻿namespace CodingProblems.Edabit;
 public class Medium
 {
 
@@ -105,5 +105,14 @@ public class Medium
 		}
 
 		return "{ LETTERS =  " + letters + ", DIGITS =  " + digits + " }";
+	}
+
+	public Int32 FindTheCharactersCounterpartCharCode(String character)
+	{
+		return character.ToCharArray().First();
+	}
+	public Int32 CountOnesInBinaryRepresentationOfInteger(Int32 num)
+	{
+		return (Int32) Convert.ToString(num, 2).ToCharArray().ToList().Select(Char.GetNumericValue).Sum();
 	}
 }
