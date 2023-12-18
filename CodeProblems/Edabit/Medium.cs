@@ -158,4 +158,96 @@ public class Medium
 
 		return true;
 	}
+
+	public Boolean FractionGreaterThanOne(String fraction)
+	{
+		var strArray = fraction.Split("/");
+		var numerator = Double.Parse(strArray[0]);
+		var denominator = Double.Parse(strArray[1]);
+
+		return (numerator / denominator) > 1.0;
+	}
+	public String ReturnTheMiddleCharacterOfAString(String word)
+	{
+		var middle = (Int32) (word.Length / 2.0);
+
+		return Int32.IsOddInteger(word.Length) ? word[middle].ToString() : $"{word[middle - 1]}{word[middle]}";
+	}
+
+	public String ScottishScreaming(String phrase)
+	{
+		var sb = new StringBuilder(phrase.Length);
+
+		foreach (var letter in phrase)
+		{
+			if (letter is 'a' or 'e' or 'i' or 'o' or 'u' or 'A' or 'E' or 'I' or 'O' or 'U')
+			{
+				_ = sb.Append('E');
+				continue;
+			}
+
+			_ = sb.Append(letter.ToString().ToUpper());
+		}
+
+		return sb.ToString();
+	}
+
+	public String MaskifyTheString(String strNum)
+	{
+		if (strNum.Length < 4)
+		{
+			return strNum;
+		}
+
+		var sb = new StringBuilder(strNum.Length);
+
+		for (var i = 0; i < strNum.Length; i++)
+		{
+			_ = strNum.Length - 4 <= i ? sb.Append(strNum[i]) : sb.Append('#');
+		}
+
+		return sb.ToString();
+	}
+
+	public Int32 GCDOfTwoNumbers(Int32 numOne, Int32 numTwo)
+	{
+		var gcd = 0;
+		if (numOne <= numTwo)
+		{
+			for (var i = 1; i < numTwo; i++)
+			{
+				if (numTwo % i == 0 && numOne % i == 0)
+				{
+					gcd = i;
+				}
+			}
+		}
+		else
+		{
+			for (var i = 1; i < numOne; i++)
+			{
+				if (numTwo % i == 0 && numOne % i == 0)
+				{
+					gcd = i;
+				}
+			}
+		}
+
+		return gcd;
+	}
+
+	public Int32[] FilterOutStringsFromAnArray(Object[] array)
+	{
+		var intList = new List<Int32>();
+
+		foreach (var item in array)
+		{
+			if (item.GetType() == typeof(Int32))
+			{
+				intList.Add((Int32) item);
+			}
+		}
+
+		return [.. intList];
+	}
 }

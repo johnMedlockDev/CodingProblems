@@ -346,4 +346,174 @@ public class MediumTests
 		var actual = _sut.ATMPINCodeValidation(given);
 		_ = actual.Should().Be(expected);
 	}
+	//https://edabit.com/challenge/uCtG3Gtfx7fgNWM58
+	[TestMethod()]
+	public void FractionGreaterThanOne_Test_1()
+	{
+		var given = "1/2";
+		var expected = false;
+		var actual = _sut.FractionGreaterThanOne(given);
+		_ = actual.Should().Be(expected);
+	}
+	[TestMethod()]
+	public void FractionGreaterThanOne_Test_2()
+	{
+		var given = "7/4";
+		var expected = true;
+		var actual = _sut.FractionGreaterThanOne(given);
+		_ = actual.Should().Be(expected);
+	}
+	[TestMethod()]
+	public void FractionGreaterThanOne_Test_3()
+	{
+		var given = "10/10";
+		var expected = false;
+		var actual = _sut.FractionGreaterThanOne(given);
+		_ = actual.Should().Be(expected);
+	}
+	//https://edabit.com/challenge/JF25KTZEcPzXhBvpM
+	[TestMethod()]
+	public void ReturnTheMiddleCharacterOfAString_Test_1()
+	{
+		var given = "test";
+		var expected = "es";
+		var actual = _sut.ReturnTheMiddleCharacterOfAString(given);
+		_ = actual.Should().Be(expected);
+	}
+	[TestMethod()]
+	public void ReturnTheMiddleCharacterOfAString_Test_2()
+	{
+		var given = "testing";
+		var expected = "t";
+		var actual = _sut.ReturnTheMiddleCharacterOfAString(given);
+		_ = actual.Should().Be(expected);
+	}
+	[TestMethod()]
+	public void ReturnTheMiddleCharacterOfAString_Test_3()
+	{
+		var given = "middle";
+		var expected = "dd";
+		var actual = _sut.ReturnTheMiddleCharacterOfAString(given);
+		_ = actual.Should().Be(expected);
+	}
+	[TestMethod()]
+	public void ReturnTheMiddleCharacterOfAString_Test_4()
+	{
+		var given = "A";
+		var expected = "A";
+		var actual = _sut.ReturnTheMiddleCharacterOfAString(given);
+		_ = actual.Should().Be(expected);
+	}
+	//https://edabit.com/challenge/fcGARuJW6tcYyWMQw
+	[TestMethod()]
+	public void ScottishScreaming_Test_1()
+	{
+		var given = "hello world";
+		var expected = "HELLE WERLD";
+		var actual = _sut.ScottishScreaming(given);
+		_ = actual.Should().Be(expected);
+	}
+	[TestMethod()]
+	public void ScottishScreaming_Test_2()
+	{
+		var given = "Mr. Fox was very naughty";
+		var expected = "MR. FEX WES VERY NEEGHTY";
+		var actual = _sut.ScottishScreaming(given);
+		_ = actual.Should().Be(expected);
+	}
+	[TestMethod()]
+	public void ScottishScreaming_Test_3()
+	{
+		var given = "Butterflies are beautiful!";
+		var expected = "BETTERFLEES ERE BEEETEFEL!";
+		var actual = _sut.ScottishScreaming(given);
+		_ = actual.Should().Be(expected);
+	}
+	//https://edabit.com/challenge/RFeBL2TzSf7mRMNJi
+	[TestMethod()]
+	public void MaskifyTheString_Test_1()
+	{
+		var given = "4556364607935616";
+		var expected = "############5616";
+		var actual = _sut.MaskifyTheString(given);
+		_ = actual.Should().Be(expected);
+	}
+	[TestMethod()]
+	public void MaskifyTheString_Test_2()
+	{
+		var given = "64607935616";
+		var expected = "#######5616";
+		var actual = _sut.MaskifyTheString(given);
+		_ = actual.Should().Be(expected);
+	}
+
+	[TestMethod()]
+	public void MaskifyTheString_Test_3()
+	{
+		var given = "1";
+		var expected = "1";
+		var actual = _sut.MaskifyTheString(given);
+		_ = actual.Should().Be(expected);
+	}
+	[TestMethod()]
+	public void MaskifyTheString_Test_4()
+	{
+		var given = "";
+		var expected = "";
+		var actual = _sut.MaskifyTheString(given);
+		_ = actual.Should().Be(expected);
+	}
+	//https://edabit.com/challenge/b5HL5ju3Fpx5zjoXn
+	[TestMethod()]
+	public void GCDOfTwoNumbers_Test_1()
+	{
+		var givenA = 32;
+		var givenB = 8;
+		var expected = 8;
+		var actual = _sut.GCDOfTwoNumbers(givenA, givenB);
+		_ = actual.Should().Be(expected);
+	}
+	[TestMethod()]
+	public void GCDOfTwoNumbers_Test_2()
+	{
+		var givenA = 8;
+		var givenB = 12;
+		var expected = 4;
+		var actual = _sut.GCDOfTwoNumbers(givenA, givenB);
+		_ = actual.Should().Be(expected);
+	}
+	[TestMethod()]
+	public void GCDOfTwoNumbers_Test_3()
+	{
+		var givenA = 17;
+		var givenB = 13;
+		var expected = 1;
+		var actual = _sut.GCDOfTwoNumbers(givenA, givenB);
+		_ = actual.Should().Be(expected);
+	}
+	//https://edabit.com/challenge/4eSei6t8emzpyMwvu
+	[TestMethod()]
+	public void FilterOutStringsFromAnArray_Test_1()
+	{
+		var given = new Object[] { 1, 2, "a", "b" };
+		var expected = new Int32[] { 1, 2 };
+		var actual = _sut.FilterOutStringsFromAnArray(given);
+		_ = actual.Should().BeEquivalentTo(expected, options => options.WithStrictOrdering());
+	}
+	[TestMethod()]
+	public void FilterOutStringsFromAnArray_Test_2()
+	{
+		var given = new Object[] { 1, "a", "b", 0, 15 };
+		var expected = new Int32[] { 1, 0, 15 };
+		var actual = _sut.FilterOutStringsFromAnArray(given);
+		_ = actual.Should().BeEquivalentTo(expected, options => options.WithStrictOrdering());
+	}
+	[TestMethod()]
+	public void FilterOutStringsFromAnArray_Test_3()
+	{
+		var given = new Object[] { 1, 2, "aasf", "1", "123", 123 };
+		var expected = new Int32[] { 1, 2, 123 };
+		var actual = _sut.FilterOutStringsFromAnArray(given);
+		_ = actual.Should().BeEquivalentTo(expected, options => options.WithStrictOrdering());
+	}
 }
