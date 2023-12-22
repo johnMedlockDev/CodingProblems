@@ -1,4 +1,5 @@
-﻿namespace CodeProblems.Edabit;
+﻿using System.Text.RegularExpressions;
+namespace CodeProblems.Edabit;
 public class Medium
 {
 
@@ -346,5 +347,58 @@ public class Medium
 	public Boolean FridayThe13th(Int32 month, Int32 year)
 	{
 		return new DateTime(year, month, 13).DayOfWeek == DayOfWeek.Friday;
+	}
+
+	public Int64 ReturnTheSumOfTheTwoSmallestNumbers(Int64[] array)
+	{
+		var filteredArray = array.Where(x => x >= 0).ToArray();
+
+		var min = filteredArray.Min();
+		var secondMin = Int64.MaxValue;
+
+		foreach (var value in filteredArray)
+		{
+			if (value < secondMin && value > min)
+			{
+				secondMin = value;
+			}
+		}
+
+		return min + secondMin;
+	}
+
+	public Boolean IsThePhoneNumberFormattedCorrectly(String phoneNumber)
+	{
+		var pattern = @"^\(\d{3}\) \d{3}-\d{4}$";
+		var regex = new Regex(pattern);
+		return regex.IsMatch(phoneNumber);
+	}
+	public Double PiToNDecimalPlaces(Int32 numberOfDecimalPlaces)
+	{
+		return Math.Round(Math.PI, numberOfDecimalPlaces);
+	}
+	public String RemoveAllSpecialCharactersFromAString(String phrase)
+	{
+		var filterString = phrase.Where(c => Char.IsLetterOrDigit(c) || c == ' ' || c == '-' || c == '_').ToArray();
+
+		return new String(filterString);
+	}
+
+	public Boolean PerfectNumber(Int32 num)
+	{
+		var factorList = new List<Int32>();
+		for (var i = 1; i <= num; i++)
+		{
+			for (var y = 1; y < num; y++)
+			{
+				if (i * y == num)
+				{
+					factorList.Add(y);
+				}
+			}
+		}
+
+		var factorListSum = factorList.Distinct().Sum();
+		return factorListSum == num;
 	}
 }
