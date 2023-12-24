@@ -2,7 +2,7 @@
 
 internal class Program
 {
-	private static void Main(String[] args)
-	{
-	}
+    private static void Main(String[] args)
+    {
+    }
 }
