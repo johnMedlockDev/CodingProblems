@@ -33,7 +33,7 @@ public class HardTests
         _ = actual.Should().Be(expected);
     }
     //https://edabit.com/challenge/E4eAyJLjgGssf7GFJ
-    //[TestMethod()]
+    [TestMethod()]
     public void ReturnExponentsOfPrimeFactors_Test_1()
     {
         var givenA = new Int32[] { 2, 3, 5 };
@@ -42,7 +42,7 @@ public class HardTests
         var actual = _sut.ReturnExponentsOfPrimeFactors(givenA, givenB);
         _ = actual.Should().BeEquivalentTo(expected, options => options.WithStrictOrdering());
     }
-    //[TestMethod()]
+    [TestMethod()]
     public void ReturnExponentsOfPrimeFactors_Test_2()
     {
         var givenA = new Int32[] { 2, 3, 5 };

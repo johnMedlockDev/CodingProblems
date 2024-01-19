@@ -6,28 +6,25 @@ public class Hard
         return new String(number.ToString().Reverse().ToArray()) + number.ToString();
     }
 
-    public Int32[] ReturnExponentsOfPrimeFactors(Int32[] array, Int32 number)
+    public Int32[] ReturnExponentsOfPrimeFactors(int[] arr, int target)
     {
-        //todo
-        //        ProductEqualTarget(new int[] { 2, 3, 5 }, 600) ➞ [3, 1, 2]
-        //// Because 2^3*3^1*5^2 = 600
+        int[] exponents = new int[arr.Length];
 
-        //ProductEqualTarget(new int[] { 2, 3, 5 }, 720) ➞ [4, 2, 1]
-        //// Because 2^4*3^2*5^1 = 720
-        ///
+        for (int i = 0; i < arr.Length; i++)
+        {
+            int factor = arr[i];
+            int exponent = 0;
 
-        //var exponentList = new List<int>();
-        //foreach (Int32 factor in array)
-        //{
-        //    var newPrimeFactor = number / factor; //300 2
-        //    var newPrimeFactor = number / factor; //150 2
-        //    var newPrimeFactor = number / factor; //75 2
-        //    var newPrimeFactor = number / factor; //25 3
-        //    var newPrimeFactor = number / factor; //5 5
+            while (target % factor == 0)
+            {
+                target /= factor;
+                exponent++;
+            }
 
-        //}
+            exponents[i] = exponent;
+        }
 
-        return [];
+        return exponents;
     }
 
     public String Uncensor(String sentence, String letters)
